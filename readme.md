@@ -29,7 +29,7 @@ Pixagram is a social media platform inspired by Instagram, built using the robus
 Clone the project
 
 ```bash
-  git clone git@github.com:SinhaAmrit/pixagram.git
+  gitclone git@github.com:SinhaAmrit/ig_prj.git
 ```
 
 Create virtual environment
@@ -49,7 +49,7 @@ Activate virtual environment
 Go to the project directory
 
 ```bash
-  cd ./pixagram
+  cd ./ig_prj
 ```
 
 Install dependencies
@@ -62,29 +62,6 @@ Collect static files by running
 
 ```bash
   python manage.py collectstatic
-```
-
-Setup environment variables
-
-```bash
-  copy .env.copy .env (windows)
-  cp .env.copy .env (Unix/MacOS)
-```
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`SECRET_KEY`  
-`DB_ENGINE`  
-`DB_HOST`  
-`DB_NAME`  
-`DB_USER`  
-`DB_PASSWORD`  
-`DB_PORT`  
-
-Generate SECRET KEY by running
-
-```bash
-  python tools/generate_SECRET_KEY.py
 ```
 
 Make migrations
@@ -107,7 +84,7 @@ Open URL
 
 ## Deployment
 
-pixagram/settings.py
+ig_prj/settings.py
 
 ```bash
   ...
@@ -118,7 +95,7 @@ pixagram/settings.py
 run
 
 ```bash
-  python manage.py collectstatic && python -m gunicorn pixagram.asgi:application -k uvicorn.workers.UvicornWorker
+  python manage.py collectstatic && python -m gunicorn ig_prj.wsgi --log-file -
 ```
 
 ## Authors
